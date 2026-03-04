@@ -16,9 +16,9 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '/', element: <Movies /> },
-      { path: 'login', element: <Login /> },
-      { path: '/:id', element: <MovieDetail />, loader: detailLoader },
+      { path: '/movies/', element: <Movies /> },
+      { path: '/movies/login', element: <Login /> },
+      { path: '/movies/:id', element: <MovieDetail />, loader: detailLoader },
     ],
   },
 ]);

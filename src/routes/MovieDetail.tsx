@@ -1,10 +1,17 @@
 import { useLoaderData } from 'react-router-dom';
 import { getMovieDetail } from '../services/apiCall';
 import styles from '../styles/MovieDetail.module.css';
+import type { LoaderFunctionArgs } from 'react-router-dom';
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const loader = async ({ params }) => {
-  const data = await getMovieDetail(params.id);
+export const loader = async ({ params }: LoaderFunctionArgs) => {
+  const id = params.id;
+
+  if (!id) {
+    throw new Response('Movie id is required', { status: 400 });
+  }
+
+  const data = await getMovieDetail(id);
   return { data };
 };
 

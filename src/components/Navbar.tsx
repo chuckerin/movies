@@ -16,10 +16,10 @@ const Navbar = () => {
       <ul className={styles.navWrapper}>
         {user?.name && <li>Welcome {user.name}</li>}
         <li>
-          <NavLink to={'/'}>Movies</NavLink>
+          <NavLink to={'/movies/'}>Movies</NavLink>
         </li>
         <li>
-          <NavLink to={'login'}>Login</NavLink>
+          <NavLink to={'/movies/login'}>Login</NavLink>
         </li>
       </ul>
     </nav>

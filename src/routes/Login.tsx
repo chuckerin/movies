@@ -15,7 +15,7 @@ const Login = () => {
     dispatch(setUser({ name, password }));
     setName('');
     setPassword('');
-    navigate('/');
+    navigate('/movies/');
   };
 
   return (

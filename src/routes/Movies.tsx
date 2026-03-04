@@ -34,7 +34,7 @@ const Movies = () => {
             const { title, vote_average, poster_path, id } = movie;
             return (
               <div
-                onClick={() => navigate(`/${id}`)}
+                onClick={() => navigate(`/movies/${id}`)}
                 key={index}
                 className={styles.cardWrapper}
               >
