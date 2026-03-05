@@ -22,7 +22,9 @@ jobs:
           echo "Repository: $GITHUB_REPOSITORY"
           echo "Ref: $GITHUB_REF"
           echo "Actor: $GITHUB_ACTOR" 
-          echo "Vite: $vars.VITE_API_KEY "
+          echo "Vite: $vars.VITE_API_KEY"
+          echo "Vite: $secrets.VITE_API_KEY"
+          echo "Vite: $VITE_API_KEY"
 
       - name: Install dependencies
         run: npm install
@@ -30,7 +32,7 @@ jobs:
       - name: Build application
         env:
           # Access the secret/variable and assign it to an environment variable name
-          VITE_API_KEY: ${{ vars.VITE_API_KEY }}
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
