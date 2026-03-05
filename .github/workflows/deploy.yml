@@ -28,7 +28,7 @@ jobs:
           echo "Vite: $VITE_API_KEY"
           echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
           echo "env -> ${{ env.VITE_API_KEY }}, vars -> ${{ vars.VITE_API_KEY }}, secrets -> ${{ secrets.VITE_API_KEY }}"
-          echo "Repository -> ${{github.repository}}"
+          echo "Repository -> ${{github.repository}}, VITE_API_KEY -> ${{github.env.vars.VITE_API_KEY}}"
 
       - name: Install dependencies
         run: npm install
