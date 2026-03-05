@@ -27,7 +27,7 @@ jobs:
           echo "Vite: $env.VITE_API_KEY"
           echo "Vite: $VITE_API_KEY"
           echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
-          echo "env -> ${{ env.VITE_API_KEY }}, vars -> ${{ vars.VITE_API_KEY }}, secrets -> ${{ secrets.VITE_API_KEY }} github -> $vars"
+          echo "env -> ${{ env.VITE_API_KEY }}, vars -> ${{ vars.VITE_API_KEY }}, secrets -> ${{ secrets.VITE_API_KEY }}"
 
       - name: Install dependencies
         run: npm install
@@ -35,7 +35,7 @@ jobs:
       - name: Build application
         #env:
         # Access the secret/variable and assign it to an environment variable name
-        #VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+        #VITE_API_KEY:
         run: npm run build
 
       - name: Deploy to GitHub Pages
