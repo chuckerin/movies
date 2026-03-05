@@ -18,7 +18,13 @@ jobs:
           node-version: '20' # Use a compatible Node.js version (e.g., 18 or 20)
 
       - name: Environment Variable
-        run: echo "key is ${{ vars.VITE_API_KEY }}"
+        run: echo "VITE_API_KEY is ${{ vars.VITE_API_KEY }}"
+
+      - name: Another Env Var
+        run: echo "VITE_API_KEY is ${{ env.VITE_API_KEY }}"
+
+      - name: Another Env Variable
+        run: echo "VITE_API_KEY is ${{ secrets.VITE_API_KEY }}"
 
       - name: Install dependencies
         run: npm install
