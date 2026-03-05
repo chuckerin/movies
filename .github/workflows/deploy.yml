@@ -24,7 +24,9 @@ jobs:
           echo "Actor: $GITHUB_ACTOR" 
           echo "Vite: $vars.VITE_API_KEY"
           echo "Vite: $secrets.VITE_API_KEY"
+          echo "Vite: $env.VITE_API_KEY"
           echo "Vite: $VITE_API_KEY"
+          echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
 
       - name: Install dependencies
         run: npm install
